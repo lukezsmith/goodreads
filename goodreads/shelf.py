@@ -4,7 +4,7 @@ class GoodreadsShelf:
         self._shelf_dict = shelf_dict
 
     def __repr__(self):
-        return self.name
+        return self.name 
 
     @property
     def name(self):
@@ -12,4 +12,4 @@ class GoodreadsShelf:
 
     @property
     def count(self):
-        return self._shelf_dict['book_count']
+        return int(self._shelf_dict['book_count']['#text'])
