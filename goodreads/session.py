@@ -17,13 +17,14 @@ class GoodreadsSession():
             consumer_key=self.client_key,
             consumer_secret=self.client_secret,
             name='goodreads',
-            request_token_url='http://www.goodreads.com/oauth/request_token',
-            authorize_url='http://www.goodreads.com/oauth/authorize',
-            access_token_url='http://www.goodreads.com/oauth/access_token',
-            base_url='http://www.goodreads.com/'
+            request_token_url='https://www.goodreads.com/oauth/request_token',
+            authorize_url='https://www.goodreads.com/oauth/authorize',
+            access_token_url='https://www.goodreads.com/oauth/access_token',
+            base_url='https://www.goodreads.com/'
         )
         request_token, request_token_secret = service.get_request_token(header_auth=True)
         auth_url = service.get_authorize_url(request_token)
+
         # Store service for finalizing
         self.request_token = request_token
         self.request_token_secret = request_token_secret
@@ -32,6 +33,7 @@ class GoodreadsSession():
 
     def oauth_finalize(self):
         """Once the user authorizes access, save access tokens"""
+
         self.session = self.service.get_auth_session(self.request_token,
                                                      self.request_token_secret)
         self.access_token = self.session.access_token
