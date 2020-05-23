@@ -1,7 +1,7 @@
 goodreads
 =========
 
-This project is no longer maintained.
+This project was archived back in 2017, I'll be updating and potentially expanding it.
 
 |Build Status| |Coverage Status| |Documentation Status| |Downloads|
 |Latest Version| |Supported Python versions| |License|
